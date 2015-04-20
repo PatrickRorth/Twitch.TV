@@ -26,8 +26,10 @@
 <script>
 	
 	(function() {
-		
 
+		var game_id, game_name, top_header;
+		
+				
 		  $.ajax({
 	            url: 'https://api.twitch.tv/kraken/games/top?limit=100&offset=0',
 	            type: 'GET',
@@ -37,13 +39,57 @@
 	            	
 	            	$.each(data.top, function(index, value){
 	            		
-	            		$("#twitch-widget-gamelist").append("<img src='" + value.game.box.medium + "' id='" + value.game._id + "'>");
+	            		game_id = value.game._id;
+	            		game_name = value.game.name;
+	            		
+	            		$("#twitch-widget-gamelist").append("<a name='" + game_name + "' id='" + game_id + "' href='#' ><img src='" + value.game.box.medium + "'></a>");
 	            		
 	            	})
 	            	
 	            	
 	            }
 			}); 
+		  
+		  
+		  $(document).on("click", "#twitch-widget-gamelist a", function(e) {
+			  e.preventDefault();
+			  var id = $(this).attr("id");
+			  var name = $(this).attr("name");
+			  
+			  $("#game-list-header").text(name);
+			  
+			  name = name.replace(/\s/g,"+");
+			  name = name.replace(/\:/g,"%3A");
+			  
+			  $("#twitch-widget-gamelist").empty();
+			  
+			  $.ajax({
+		            url: 'https://api.twitch.tv/kraken/streams?game=' + name + '&limit=100',
+		            type: 'GET',
+		            contentType: 'application/json',
+		            dataType: 'jsonp',
+		            success: function(data) {
+		            	
+		            	$.each(data.streams, function(index, value){
+		            			            		
+		            		$("#twitch-widget-gamelist").append("<a href='#'><img src='" + value.preview.medium + "'></a>");
+		            		console.log("https://api.twitch.tv/kraken/streams?game=" + name + '&limit=25');
+		            		
+		            	})
+		            	
+		            	
+		            }
+				});
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			});
+		  
+		  
 
 		})();
 	
@@ -59,7 +105,9 @@
 		<div class="left_panel_menu">
 			<h1>BROWSE</h1>
 			<ul class="left_panel_menu_list">
-				<li>Games</li>
+				<li>
+					<a href="index.html">Games</a>
+				</li>
 				<li>Channels</li>
 			</ul>
 
@@ -73,7 +121,7 @@
 		<h1 id="game-list-header">All Games</h1>
 		<input type="search" placeholder="Search Game" class="search">
 		<div class="clear"></div>
-
+			
 		<div class="twitch-widget-gamelist" id="twitch-widget-gamelist"></div>
 
 	</div>

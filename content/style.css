@@ -8,6 +8,16 @@ body {
 	line-height: 1.5;
 }
 
+a{
+	color: #fff;
+	text-decoration: none;
+}
+
+a:visited{
+	color: none;
+	text-decoration: none;
+}
+
 .left_panel {
 	background: #32323e; float : left;
 	height: 100vh;
@@ -65,7 +75,7 @@ li {
 #game-list-header {
 	float: left;
 	margin-left: 25px;
-	width: 300px;
+	width: 50%;
 }
 
 input[type="search"] {
@@ -79,9 +89,9 @@ input[type="search"] {
 *	RIGHT SIDE
 */
 .twitch-widget-gamelist {
-	overflow-y: auto;
+	overflow-y: scroll;
 }
 
-.twitch-widget-gamelist>img {
+.twitch-widget-gamelist>a {
 	margin: 10px 0 0 15px;
 }
