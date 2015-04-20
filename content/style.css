@@ -1,0 +1,87 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #fff;
+	font-family: "Helvetica Neue", sans-serif;
+	line-height: 1.5;
+}
+
+.left_panel {
+	background: #32323e; float : left;
+	height: 100vh;
+	width: 20vw;
+	color: #fff;
+	float: left;
+}
+
+.right_panel {
+	float: right;
+	height: 100%;
+	width: 80vw;
+	background: #fff;
+	color: #000;
+}
+
+li {
+	list-style-position: inside;
+	list-style-type: none;
+	list-style: none;
+}
+
+.clear {
+	clear: both;
+}
+
+/*
+*	LEFT SIDE
+*/
+.logo {
+	vertical-align: middle;
+	text-align: center;
+	margin: 25px 0;
+}
+
+.logo>img {
+	width: 80%;
+}
+
+.left_panel_menu {
+	margin: 25px 25px 0 25px;
+}
+
+.left_panel_menu_list {
+	list-style-type: none;
+	list-style-position: inside;
+	min-height: 30px;
+	font-size: 24px;
+}
+
+.left_panel_menu_list>li:hover {
+	background: #101014;
+}
+
+#game-list-header {
+	float: left;
+	margin-left: 25px;
+	width: 300px;
+}
+
+input[type="search"] {
+	width: 250px;
+	height: 30px;
+	float: right;
+	margin: 25px 25px;
+}
+
+/*
+*	RIGHT SIDE
+*/
+.twitch-widget-gamelist {
+	overflow-y: auto;
+}
+
+.twitch-widget-gamelist>img {
+	margin: 10px 0 0 15px;
+}

@@ -1,0 +1,11 @@
+{
+    "id": "com.patrickrorth.twitchtv",
+    "version": "0.0.2",
+    "vendor": "PatrickR",
+    "type": "web",
+    "main": "index.html",
+    "title": "TwitchTV",
+    "icon": "icon.png",
+    "largeIcon": "largeIcon.png",
+    "uiRevision": 2
+}
