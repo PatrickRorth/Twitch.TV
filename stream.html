@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="content/style.css" media="screen" rel="stylesheet" type="text/css">
+
+<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+	   //sample code for calling LS2 API
+       var lunaReq= webOS.service.request("luna://com.palm.systemservice",
+        {
+            method:"clock/getTime",
+            parameters:{},
+            onSuccess: function (args) {
+				console.log("UTC:", args.utc);
+            },
+            onFailure: function (args) {
+            }
+        });
+	</script>
+
+
+<script>
+	
+	$(document).ready(function () {
+		
+		var nameHash = location.hash;
+		
+		nameHash = nameHash.replace(/\#/g,"");
+		
+		var player = "<iframe frameborder='0' scrolling='no' id='chat_embed' src='http://www.twitch.tv/" + nameHash + "/embed' height='100%' width='100%'></iframe>";
+		var chat = "<iframe id='player' type='text/html' width='100%' height='100%' src='https://www.nightdev.com/hosted/obschat/?style=light&channel=" + nameHash + "&fade=false&bot_activity=false' frameborder='0'></iframe>";
+		
+		$("#player_frame").append(player);
+		
+		$("#chat").html(chat);
+		
+		//alert(player);
+		//alert(chat);
+		
+	})();
+	
+	</script>
+	
+	
+	
+</head>
+<body>
+	<div class="left_panel_stream" id="player_frame">
+		<div class="back">
+			<a href="index.html">
+				<img src="content/back.png"/>
+			</a>
+		</div>
+		
+		
+		
+		
+	</div>
+
+
+	<div class="right_panel_stream" id="chat">	
+
+	</div>
+	<div style="clear: both;"></div>
+</body>
+</html>

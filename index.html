@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="content/style.css" media="screen" rel="stylesheet"
-	type="text/css">
+<link href="content/style.css" media="screen" rel="stylesheet" type="text/css">
 
 <script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script type="text/javascript">
 	   //sample code for calling LS2 API
@@ -73,7 +72,7 @@
 		            	
 		            	$.each(data.streams, function(index, value){
 		            			            		
-		            		$("#twitch-widget-gamelist").append("<a href='#'><img src='" + value.preview.medium + "'></a>");
+		            		$("#twitch-widget-streamlist").append("<a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a>");
 		            		
 		            	})
 		            }
@@ -81,6 +80,23 @@
 			});
 		  
 		  
+		  
+		// CLICK A STREAM :: WHEN CKICK A STREAM IMAGE -> SHOW STREAM
+		  $(document).on("click", "#twitch-widget-streamlist a", function(e) {
+			  e.preventDefault();
+			  var id = $(this).attr("id");
+			  var name = $(this).attr("name");
+			  
+			  window.location = "stream.html#" + name;
+			  
+			  
+			});
+		  
+		  
+		
+		
+		
+		
 		  // CLICK CHANNELS
 		  $(document).on("click", "#channels", function(e) {
 			  
@@ -97,26 +113,21 @@
 		            	
 		            	$.each(data.streams, function(index, value){
 		            			            		
-		            		$("#twitch-widget-gamelist").append("<a href='#'><img src='" + value.preview.medium + "'></a>");
+		            		$("#twitch-widget-streamlist").append("<a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a>");
 		            		
 		            	})
 		            }
 				});
-			  
-			  
-			  
-			  
-			  
 		  });
 		  
 		  
 		  
-		  
-
 		})();
 	
 	</script>
-
+	
+	
+	
 </head>
 <body>
 	<div class="left_panel">
@@ -133,6 +144,7 @@
 				<li>
 					<a href="#" id="channels">Channels</a>
 				</li>
+				
 			</ul>
 
 		</div>
@@ -141,12 +153,13 @@
 	</div>
 
 
-	<div class="right_panel">
+	<div class="right_panel">	
 		<h1 id="game-list-header">All Games</h1>
 		<input type="search" placeholder="Search Game [NOT WORKING]" class="search">
 		<div class="clear"></div>
-			
+
 		<div class="twitch-widget-gamelist" id="twitch-widget-gamelist"></div>
+		<div class="twitch-widget-streamlist" id="twitch-widget-streamlist"></div>
 
 	</div>
 	<div style="clear: both;"></div>
