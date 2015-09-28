@@ -16,3 +16,16 @@ If you want to try out the app for your self, you can just follow these steps.
 ## Images
 ![TV Menu](http://i.imgur.com/y6IabsX.jpg)
 ![App menu](http://i.imgur.com/l6tpgYQ.png)
+
+
+#### Updates
+###### Update 0.4
+Added:
+- Background image
+- Splash image
+- Background color on Twitch app icon
+- Source quality video
+- Stream name, title & viewers, on Stream overview
+
+Removed:
+- Chat (Temp) : Function was not good enough
