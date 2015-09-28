@@ -29,7 +29,7 @@ a:visited{
 .left_panel_stream {
 	background: #32323e; float : left;
 	height: 100vh;
-	width: 80%;
+	width: 100%;
 	color: #fff;
 	float: left;
 }
@@ -121,7 +121,15 @@ input[type="search"] {
 }
 
 
-
+.stream_img{
+	max-width: 320px;
+	height: 232px;
+	float: left;
+	margin: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 
 
 /*
@@ -137,5 +145,21 @@ input[type="search"] {
 .back img{
 	width: 36px;
 	height: 36px;
+}
+
+.hide_chat{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.hide_chat img{
+	width: 32px;
+	height: 32px;
+}
+
+#img_hide{
+	width: 32px;
+	height: 32px;
 }
 

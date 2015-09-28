@@ -72,7 +72,8 @@
 		            	
 		            	$.each(data.streams, function(index, value){
 		            			            		
-		            		$("#twitch-widget-streamlist").append("<a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a>");
+		            		$("#twitch-widget-streamlist").append("<div class='stream_img'><a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a><br><b>" + value.channel.display_name + " " + value.viewers + "</b><br/><div id='channel_status'>" + value.channel.status + "</div></div>");
+		            		
 		            		
 		            	})
 		            }

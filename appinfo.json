@@ -1,11 +1,14 @@
 {
     "id": "com.patrickrorth.twitchtv",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "vendor": "PatrickR",
     "type": "web",
     "main": "index.html",
     "title": "TwitchTV",
+    "bgImage": "background.png",
+    "splashBackground": "splash.png",
     "icon": "icon.png",
+    "iconColor": "#6441a5",
     "largeIcon": "largeIcon.png",
     "uiRevision": 2
 }

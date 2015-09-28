@@ -30,15 +30,26 @@
 		
 		nameHash = nameHash.replace(/\#/g,"");
 		
-		var player = "<iframe frameborder='0' scrolling='no' id='chat_embed' src='http://www.twitch.tv/" + nameHash + "/embed' height='100%' width='100%'></iframe>";
+		var player = "<video width='100%' height='100%' autoplay><source src='http://simpletwitch.esy.es/stream.m3u8?channel=" + nameHash + "' type='application/x-mpegURL'></video>";
 		var chat = "<iframe id='player' type='text/html' width='100%' height='100%' src='https://www.nightdev.com/hosted/obschat/?style=light&channel=" + nameHash + "&fade=false&bot_activity=false' frameborder='0'></iframe>";
 		
 		$("#player_frame").append(player);
 		
-		$("#chat").html(chat);
+		//$("#chat").html(chat);
 		
 		//alert(player);
 		//alert(chat);
+		
+		
+		
+		
+		//HIDE CHAT
+		//$( "#img_hide" ).click(function() {
+		//	  $( "#chat" ).toggle(1);
+		//	  
+		//	});
+		
+		
 		
 	})();
 	
@@ -57,13 +68,17 @@
 		
 		
 		
+	</div>
+
+
+	<div class="right_panel_stream" id="chat">
 		
 	</div>
-
-
-	<div class="right_panel_stream" id="chat">	
-
-	</div>
+	<!-- 
+	<div class="hide_chat">
+			<img src="content/hide.png" id="img_hide">
+		</div>
+	-->
 	<div style="clear: both;"></div>
 </body>
 </html>
