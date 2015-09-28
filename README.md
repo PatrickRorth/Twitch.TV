@@ -8,7 +8,7 @@ I did that a few times, until it started to piss me off, so i started to look in
 ## Installation instructions
 If you want to try out the app for your self, you can just follow these steps.
 
-* Download latest zip from the [Downloads page](https://www.dropbox.com/s/7np16b29jye3lfk/TwitchTV.zip?dl=0).
+* Download latest zip from [Dropbox](https://www.dropbox.com/s/7np16b29jye3lfk/TwitchTV.zip?dl=0).
 * Unzip it to the root of your usb flash drive.
 * Attach your flash drive to the tv.
 * Find app in the smart menu.
