@@ -120,6 +120,21 @@ input[type="search"] {
 	margin: 10px 0 0 15px;
 }
 
+.game_img{
+	max-width: 136px;
+	height: 238px;
+	float: left;
+	margin: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.game_status {
+	
+	font-size: 12px;
+	font-color: #CCC;
+}
 
 .stream_img{
 	max-width: 320px;

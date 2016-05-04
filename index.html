@@ -7,26 +7,12 @@
 <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<script type="text/javascript">
-	   //sample code for calling LS2 API
-       var lunaReq= webOS.service.request("luna://com.palm.systemservice",
-        {
-            method:"clock/getTime",
-            parameters:{},
-            onSuccess: function (args) {
-				console.log("UTC:", args.utc);
-            },
-            onFailure: function (args) {
-            }
-        });
-	</script>
-
 
 <script>
 	
 	(function() {
 
-		var game_id, game_name, top_header;
+		var game_id, game_name, game_viewers, top_header;
 		
 			//FRONT PAGE
 		  $.ajax({
@@ -40,12 +26,13 @@
 	            		
 	            		game_id = value.game._id;
 	            		game_name = value.game.name;
+	            		game_image = value.game.box.medium;
+	            		game_viewers = value.viewers;
 	            		
-	            		$("#twitch-widget-gamelist").append("<a name='" + game_name + "' id='" + game_id + "' href='#' ><img src='" + value.game.box.medium + "'></a>");
-	            		
+	            		$("#twitch-widget-gamelist").append("<div class='game_img'><a href='#' name='" + game_name + "' id='" + game_id + "'><img src='" + game_image + "'></a><br><b>" + game_name + "</b><br/><div class='game_status'>" + game_viewers + " viewers</div></div>");
+	            	
 	            	})
-	            	
-	            	
+
 	            }
 			}); 
 		  
@@ -72,9 +59,8 @@
 		            	
 		            	$.each(data.streams, function(index, value){
 		            			            		
-		            		$("#twitch-widget-streamlist").append("<div class='stream_img'><a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a><br><b>" + value.channel.display_name + " " + value.viewers + "</b><br/><div id='channel_status'>" + value.channel.status + "</div></div>");
-		            		
-		            		
+		            		$("#twitch-widget-streamlist").append("<div class='stream_img'><a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a><br><b>" + value.channel.display_name + " (" + value.viewers + " viewers)</b><br/><div id='channel_status'>" + value.channel.status + "</div></div>");
+
 		            	})
 		            }
 				});
@@ -90,13 +76,7 @@
 			  
 			  window.location = "stream.html#" + name;
 			  
-			  
 			});
-		  
-		  
-		
-		
-		
 		
 		  // CLICK CHANNELS
 		  $(document).on("click", "#channels", function(e) {
@@ -114,19 +94,16 @@
 		            	
 		            	$.each(data.streams, function(index, value){
 		            			            		
-		            		$("#twitch-widget-streamlist").append("<a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a>");
+		            		$("#twitch-widget-streamlist").append("<div class='stream_img'><a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a><br><b>" + value.channel.display_name + " (" + value.viewers + " viewers)</b><br/><div id='channel_status'>" + value.channel.status + "</div></div>");
 		            		
 		            	})
 		            }
 				});
 		  });
-		  
-		  
-		  
+
 		})();
 	
 	</script>
-	
 	
 	
 </head>
@@ -156,7 +133,7 @@
 
 	<div class="right_panel">	
 		<h1 id="game-list-header">All Games</h1>
-		<input type="search" placeholder="Search Game [NOT WORKING]" class="search">
+		<!-- <input type="search" placeholder="Search Game [NOT WORKING]" class="search"> -->
 		<div class="clear"></div>
 
 		<div class="twitch-widget-gamelist" id="twitch-widget-gamelist"></div>
