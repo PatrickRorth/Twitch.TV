@@ -6,21 +6,7 @@
 <script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
 <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-<script type="text/javascript">
-	   //sample code for calling LS2 API
-       var lunaReq= webOS.service.request("luna://com.palm.systemservice",
-        {
-            method:"clock/getTime",
-            parameters:{},
-            onSuccess: function (args) {
-				console.log("UTC:", args.utc);
-            },
-            onFailure: function (args) {
-            }
-        });
-	</script>
-
+<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
 
 <script>
 	
@@ -29,27 +15,17 @@
 		var nameHash = location.hash;
 		
 		nameHash = nameHash.replace(/\#/g,"");
-		
-		var player = "<video width='100%' height='100%' autoplay><source src='http://simpletwitch.esy.es/stream.m3u8?channel=" + nameHash + "' type='application/x-mpegURL'></video>";
-		var chat = "<iframe id='player' type='text/html' width='100%' height='100%' src='https://www.nightdev.com/hosted/obschat/?style=light&channel=" + nameHash + "&fade=false&bot_activity=false' frameborder='0'></iframe>";
-		
-		$("#player_frame").append(player);
-		
-		//$("#chat").html(chat);
-		
-		//alert(player);
-		//alert(chat);
-		
-		
-		
-		
-		//HIDE CHAT
-		//$( "#img_hide" ).click(function() {
-		//	  $( "#chat" ).toggle(1);
-		//	  
-		//	});
-		
-		
+
+		    var options = {
+		    	autoplay: true,
+		        width: $(document).width(),
+		        height: $(document).height(),
+		        channel: nameHash,      
+		    };
+		    
+		    var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
+		    player.setVolume(1);
+		    player.setQuality("chunked");
 		
 	})();
 	
@@ -60,25 +36,13 @@
 </head>
 <body>
 	<div class="left_panel_stream" id="player_frame">
+	
 		<div class="back">
 			<a href="index.html">
 				<img src="content/back.png"/>
 			</a>
 		</div>
-		
-		
-		
+	<div id="{PLAYER_DIV_ID}"></div>
 	</div>
-
-
-	<div class="right_panel_stream" id="chat">
-		
-	</div>
-	<!-- 
-	<div class="hide_chat">
-			<img src="content/hide.png" id="img_hide">
-		</div>
-	-->
-	<div style="clear: both;"></div>
 </body>
 </html>

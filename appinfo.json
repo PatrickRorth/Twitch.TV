@@ -1,14 +1,14 @@
 {
-    "id": "com.patrickrorth.twitchtv",
-    "version": "0.0.4",
     "vendor": "PatrickR",
-    "type": "web",
-    "main": "index.html",
-    "title": "TwitchTV",
-    "bgImage": "background.png",
-    "splashBackground": "splash.png",
-    "icon": "icon.png",
     "iconColor": "#6441a5",
     "largeIcon": "largeIcon.png",
-    "uiRevision": 2
+    "icon": "icon.png",
+    "main": "index.html",
+    "bgImage": "background.png",
+    "id": "com.patrickrorth.twitchtv",
+    "title": "TwitchTV",
+    "type": "web",
+    "version": "0.0.5",
+    "splashBackground": "splash.png",
+    "uiRevision":2
 }
