@@ -8,24 +8,22 @@ I did that a few times, until it started to piss me off, so i started to look in
 ## Installation instructions
 If you want to try out the app for your self, you can just follow these steps.
 
-* Download latest zip from [Dropbox](https://www.dropbox.com/s/7np16b29jye3lfk/TwitchTV.zip?dl=0).
+* Download latest zip from [Dropbox](https://www.dropbox.com/s/7np16b29jye3lfk/TwitchTV.zip?dl=0). (V.0.4)
 * Unzip it to the root of your usb flash drive.
 * Attach your flash drive to the tv.
 * Find app in the smart menu.
 
 ## Images
 ![TV Menu](http://i.imgur.com/y6IabsX.jpg)
-![App menu](http://i.imgur.com/l6tpgYQ.png)
+![App menu](http://i.imgur.com/l6tpgYQ.png) (V 0.4)
 
 
 #### Updates
-###### Update 0.4
+###### Update 0.5
 Added:
-- Background image
-- Splash image
-- Background color on Twitch app icon
-- Source quality video
-- Stream name, title & viewers, on Stream overview
+- UI Improvements
+ - Added Game name and viewers to the "All Games" section
+ - Added viewers to the Channels Section
+- Uses Twitch-API Stream Palyer / https://github.com/justintv/Twitch-API/blob/master/embed-video.md 
 
 Removed:
-- Chat (Temp) : Function was not good enough
