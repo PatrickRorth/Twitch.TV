@@ -24,6 +24,12 @@ Added:
 + Channel Search
 + UI Improvements
  + Page Scroll
+ + Game / Stream selector 
+ + Menu redesign
  + bug fixes
 
 Removed:
+
+#### ToDo
++ Remote control operated
++ Stream chat
