@@ -6,9 +6,9 @@
     "main": "index.html",
     "bgImage": "background.png",
     "id": "com.patrickrorth.twitchtv",
-    "title": "TwitchTV",
+    "title": "Twitch",
     "type": "web",
-    "version": "0.0.5",
-    "splashBackground": "splash.png",
+    "version": "0.0.6",
+    "splashBackground": "background.png",
     "uiRevision":2
 }
