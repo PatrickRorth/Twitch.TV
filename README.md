@@ -21,8 +21,8 @@ If you want to try out the app for your self, you can just follow these steps.
 #### Updates
 ###### Update 0.6
 Added:
++ Channel Search
 + UI Improvements
- + Channel Search
  + Page Scroll
  + bug fixes
 
