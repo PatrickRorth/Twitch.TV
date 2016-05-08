@@ -15,15 +15,21 @@ If you want to try out the app for your self, you can just follow these steps.
 
 ## Images
 ![TV Menu](http://i.imgur.com/y6IabsX.jpg)
-![App menu](http://i.imgur.com/l6tpgYQ.png) (V 0.4)
+![App menu](http://i.imgur.com/osbAh3E.jpg)
 
 
 #### Updates
-###### Update 0.5
+###### Update 0.6
 Added:
-- UI Improvements
- - Added Game name and viewers to the "All Games" section
- - Added viewers to the Channels Section
-- Uses Twitch-API Stream Palyer / https://github.com/justintv/Twitch-API/blob/master/embed-video.md 
++ Channel Search
++ UI Improvements
+ + Page Scroll
+ + Game / Stream selector 
+ + Menu redesign
+ + bug fixes
 
 Removed:
+
+#### ToDo
++ Remote control operated
++ Stream chat

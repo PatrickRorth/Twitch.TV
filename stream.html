@@ -16,26 +16,28 @@
 		
 		nameHash = nameHash.replace(/\#/g,"");
 
-		    var options = {
-		    	autoplay: true,
-		        width: $(document).width(),
-		        height: $(document).height(),
-		        channel: nameHash,      
-		    };
-		    
-		    var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
-		    player.setVolume(1);
-		    player.setQuality("chunked");
-		
+	    var options = {
+	    	autoplay: true,
+	        width: $(document).width(),
+	        height: $(document).height(),
+	        channel: nameHash,      
+	    };
+	    
+	    var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
+	    player.setVolume(1);
+	    player.setQuality("chunked");
+	    
+		var chat = "<iframe frameborder='0' scrolling='no' id='chat_embed' src='http://www.twitch.tv/" + nameHash + "/chat' height='" + $(document).height() + "' width='200'></iframe>"
+		chat.append(".left_panel_chat");
 	})();
-	
+
 	</script>
 	
 	
 	
 </head>
 <body>
-	<div class="left_panel_stream" id="player_frame">
+	<div class="left_panel_stream">
 	
 		<div class="back">
 			<a href="index.html">
@@ -44,5 +46,9 @@
 		</div>
 	<div id="{PLAYER_DIV_ID}"></div>
 	</div>
+	
+	<div class="left_panel_chat">
+	</div>
+	
 </body>
 </html>
