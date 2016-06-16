@@ -14,7 +14,7 @@ If you want to try out the app for your self, you can just follow these steps.
 * Find app in the smart menu.
 
 ## Chat Support
-![Gitter Chat](https://gitter.im/PatrickRorth/Twitch.TV)
+[Gitter Chat](https://gitter.im/PatrickRorth/Twitch.TV)
 
 ## Images
 ![TV Menu](http://i.imgur.com/y6IabsX.jpg)
