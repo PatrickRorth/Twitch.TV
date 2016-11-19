@@ -13,7 +13,7 @@ function searchChannel(search) {
 	defineScreen("Search: " + search)
 	
 	  $.ajax({
-          url: 'https://api.twitch.tv/kraken/search/streams?limit=100&q=' + search,
+          url: 'https://api.twitch.tv/kraken/search/streams?client_id=jzkbprff40iqj646a697cyrvl0zt2m6&limit=100&q=' + search,
           type: 'GET',
           contentType: 'application/json',
           dataType: 'jsonp',
@@ -39,7 +39,7 @@ function showGames(){
 	defineScreen("All Games")
 	
 	 $.ajax({
-	          url: 'https://api.twitch.tv/kraken/games/top?limit=100&offset=0',
+	          url: 'https://api.twitch.tv/kraken/games/top?client_id=jzkbprff40iqj646a697cyrvl0zt2m6&limit=100&offset=0',
 	          type: 'GET',
 	          contentType: 'application/json',
 	          dataType: 'jsonp',
@@ -65,7 +65,7 @@ function showChannels(){
 	defineScreen("Channels")
 	
 	$.ajax({
-		url: 'https://api.twitch.tv/kraken/streams?limit=100',
+		url: 'https://api.twitch.tv/kraken/streams?client_id=jzkbprff40iqj646a697cyrvl0zt2m6&limit=100',
 		type: 'GET',
 		contentType: 'application/json',
 		dataType: 'jsonp',

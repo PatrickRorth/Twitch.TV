@@ -6,7 +6,7 @@
 
 <script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
 <script src="content/twitch.js" charset="utf-8"></script>
-<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
@@ -63,7 +63,7 @@
 			  $("#twitch-widget-streamlist").empty();
 			  
 			  $.ajax({
-		            url: 'https://api.twitch.tv/kraken/streams?game=' + name + '&limit=100',
+		            url: 'https://api.twitch.tv/kraken/streams?client_id=jzkbprff40iqj646a697cyrvl0zt2m6&game=' + name + '&limit=100',
 		            type: 'GET',
 		            contentType: 'application/json',
 		            dataType: 'jsonp',
