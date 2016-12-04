@@ -6,7 +6,7 @@
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
-
+<script src="bundle.js" charset="utf-8"></script>
 <script>
 	
 	// Format code from http://stackoverflow.com/questions/610406/javascript-equivalent-to-printf-string-format
@@ -25,9 +25,21 @@
 	(function ($) {		
 		$(document).ready( function () 
 		{
-		var nameHash = location.hash;		
-		nameHash = nameHash.replace(/\#/g,"");
-		document.getElementById('videoFrame').src = "http://player.twitch.tv/?channel={0}&html5=1".format(nameHash);
+			var channel = location.hash;		
+			channel = channel.replace(/\#/g,"");
+
+			getStreamFromChannel(channel).done(function(streams) {
+				var video = document.getElementById('video');
+			    var source = document.createElement('source');
+
+			    source.setAttribute('src', streams[0].url);
+
+			    video.appendChild(source);
+			    video.play();
+			}, function(e){
+				console.log("error", e);
+			});
+
 		});
 	})(jQuery);
 	</script>	
@@ -41,12 +53,8 @@
 				<img src="content/back.png"/>
 			</a>
 		</div>
-	    <iframe 
-		frameborder="0" 
-		id="videoFrame" 		
-		width="100%" 
-		height="100%">
-		</iframe> 
+    <video id="video" width="100%" height="100%" controls>
+	</video>
 	</div>
 	
 	<div class="left_panel_chat">
